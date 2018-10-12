@@ -2,92 +2,14 @@
 
 [ext_resource path="res://Scenes/objs/structures/Structure.gd" type="Script" id=1]
 [ext_resource path="res://Imgs/Qligth.png" type="Texture" id=2]
-[ext_resource path="res://fonts/Zpix.ttf" type="DynamicFontData" id=3]
-[ext_resource path="res://Imgs/hptexture.png" type="Texture" id=4]
+[ext_resource path="res://effects/Structure.tres" type="Animation" id=3]
+[ext_resource path="res://fonts/Zpix.ttf" type="DynamicFontData" id=4]
+[ext_resource path="res://Imgs/hptexture.png" type="Texture" id=5]
 
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
 extents = Vector2( 10, 10 )
-
-[sub_resource type="Animation" id=2]
-
-resource_name = "act_tree"
-length = 0.7
-loop = false
-step = 0.1
-tracks/0/type = "value"
-tracks/0/path = NodePath("Sprite/Light2D:visible")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.7 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 1,
-"values": [ true, false ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("Sprite/Light2D:energy")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
-"update": 0,
-"values": [ 0.2, 0.6, 0.8, 0.9, 1.0, 1.0, 0.8, 0.9 ]
-}
-tracks/2/type = "value"
-tracks/2/path = NodePath("Label:self_modulate")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
-"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
-"update": 0,
-"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0.861882 ), Color( 1, 1, 1, 0.696118 ), Color( 1, 1, 1, 0.436471 ), Color( 1, 1, 1, 0.265176 ), Color( 1, 1, 1, 0.116039 ), Color( 1, 1, 1, 0.0497255 ), Color( 1, 1, 1, 0.0497255 ) ]
-}
-tracks/3/type = "value"
-tracks/3/path = NodePath("Label:rect_position")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/keys = {
-"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
-"update": 0,
-"values": [ Vector2( 0, -16 ), Vector2( 0, -18 ), Vector2( 0, -20 ), Vector2( 0, -22 ), Vector2( 0, -24 ), Vector2( 0, -26 ), Vector2( 0, -28 ) ]
-}
-tracks/4/type = "value"
-tracks/4/path = NodePath("Label:visible")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/keys = {
-"times": PoolRealArray( 0, 0.7 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ true, false ]
-}
-tracks/5/type = "value"
-tracks/5/path = NodePath("hp:visible")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/keys = {
-"times": PoolRealArray( 0, 0.7 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 1,
-"values": [ true, false ]
-}
 
 [sub_resource type="Animation" id=3]
 
@@ -125,9 +47,10 @@ tracks/1/keys = {
 size = 14
 use_mipmaps = false
 use_filter = false
-font_data = ExtResource( 3 )
+font_data = ExtResource( 4 )
+_sections_unfolded = [ "Settings" ]
 
-[node name="Structure" type="StaticBody2D"]
+[node name="Structure" type="StaticBody2D" index="0"]
 
 editor/display_folded = true
 z_index = 1
@@ -153,14 +76,13 @@ _sections_unfolded = [ "Animation", "Visibility" ]
 
 [node name="Light2D" type="Light2D" parent="Sprite" index="0"]
 
-visible = false
 enabled = true
 editor_only = false
 texture = ExtResource( 2 )
 offset = Vector2( 0, 0 )
 texture_scale = 1.0
 color = Color( 1, 1, 1, 1 )
-energy = 0.9
+energy = 0.2
 mode = 0
 range_height = 0.0
 range_z_min = -1024
@@ -184,21 +106,20 @@ autoplay = ""
 playback_process_mode = 1
 playback_default_blend_time = 0.0
 playback_speed = 1.0
-anims/act_tree = SubResource( 2 )
+anims/act_tree = ExtResource( 3 )
 anims/open_door = SubResource( 3 )
 blend_times = [  ]
 
 [node name="Label" type="Label" parent="." index="3"]
 
 visible = false
-self_modulate = Color( 1, 1, 1, 0.0497255 )
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = -28.0
+margin_top = -16.0
 margin_right = 14.0
-margin_bottom = -13.0
+margin_bottom = -1.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 2
@@ -211,7 +132,7 @@ valign = 1
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
-_sections_unfolded = [ "custom_fonts" ]
+_sections_unfolded = [ "Visibility", "custom_fonts" ]
 
 [node name="hp" type="TextureProgress" parent="." index="4"]
 
@@ -239,7 +160,7 @@ exp_edit = false
 rounded = false
 texture_under = null
 texture_over = null
-texture_progress = ExtResource( 4 )
+texture_progress = ExtResource( 5 )
 radial_fill_degrees = 360.0
 radial_center_offset = Vector2( 0, 0 )
 nine_patch_stretch = false

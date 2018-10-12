@@ -38,7 +38,7 @@ var day_time = 180
 var night_time = 120
 var day_count = 0
 
-var resoureces = { wood = 40, stone = 20, soul = 0}
+var resoureces = { wood = 100, stone = 40, soul = 0}
 
 var player_types = {
 	"woodcutter": {
