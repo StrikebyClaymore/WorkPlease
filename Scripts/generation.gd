@@ -21,6 +21,7 @@ func fill_arrays():
 	pass
 
 func gen_floors():
+	map = []
 	fill_arrays()
 	for z in more.int_rand(1, 3):
 		var zone = {size = {}, pos = {}}
