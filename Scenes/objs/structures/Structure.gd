@@ -77,7 +77,7 @@ func act(act_type):
 		global.get_damage(self, damage)
 		get_node("animation").play(self.act_anim[act_type])
 	else:
-		if objs.check_cost(objs.Recipes[self._name], 1, self) && can_repair && hit_points != max_hit_points:
+		if  self.can_repair && objs.check_cost(objs.Recipes[self._name], 1, self) && hit_points != max_hit_points:
 			objs.deal_repair(self)
 
 func end_act():
