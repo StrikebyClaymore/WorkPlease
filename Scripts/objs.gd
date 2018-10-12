@@ -128,7 +128,7 @@ var Items = {
 		"image": "res://Imgs/stone.png",
 		"groups" : ["items", "resources"],
 		"pick_up": true,
-		"count": 20,
+		"count": 30,
 		"clickable" : false
 	},
 	"axe": {
