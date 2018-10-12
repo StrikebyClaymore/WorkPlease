@@ -1,0 +1,130 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Imgs/r_wood.png" type="Texture" id=1]
+[ext_resource path="res://Imgs/stone.png" type="Texture" id=2]
+[ext_resource path="res://Imgs/blue_soul.png" type="Texture" id=3]
+
+[node name="Resources" type="Control"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 232.0
+margin_bottom = 44.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+_sections_unfolded = [ "Rect" ]
+
+[node name="ColorRect" type="ColorRect" parent="." index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 232.0
+margin_bottom = 44.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+color = Color( 0.183594, 0.174271, 0.174271, 0.618784 )
+_sections_unfolded = [ "Rect" ]
+
+[node name="wood" type="Sprite" parent="." index="1"]
+
+editor/display_folded = true
+position = Vector2( 36, 21.5 )
+texture = ExtResource( 1 )
+_sections_unfolded = [ "Transform", "Z Index" ]
+
+[node name="Label" type="Label" parent="wood" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 16.0
+margin_top = -4.0
+margin_right = 56.0
+margin_bottom = 10.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+text = "0"
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "Visibility" ]
+
+[node name="stone" type="Sprite" parent="." index="2"]
+
+editor/display_folded = true
+position = Vector2( 106.5, 21.25 )
+texture = ExtResource( 2 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Label" type="Label" parent="stone" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 16.0
+margin_top = -4.0
+margin_right = 56.0
+margin_bottom = 10.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+text = "0"
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect" ]
+
+[node name="soul" type="Sprite" parent="." index="3"]
+
+editor/display_folded = true
+position = Vector2( 176, 21.5 )
+texture = ExtResource( 3 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Label" type="Label" parent="soul" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 16.0
+margin_top = -4.0
+margin_right = 56.0
+margin_bottom = 10.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+text = "0"
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "Visibility" ]
+
+

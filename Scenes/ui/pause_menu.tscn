@@ -1,0 +1,66 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Scenes/ui/pause_menu.gd" type="Script" id=1]
+[ext_resource path="res://Scenes/ui/ControlButton.tscn" type="PackedScene" id=2]
+
+[node name="pause_menu" type="Control"]
+
+pause_mode = 2
+editor/display_folded = true
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 224.0
+margin_top = 96.0
+margin_right = 224.0
+margin_bottom = 96.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+script = ExtResource( 1 )
+_sections_unfolded = [ "Pause", "Rect" ]
+
+[node name="ColorRect" type="ColorRect" parent="." index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -224.0
+margin_top = -96.0
+margin_right = 224.0
+margin_bottom = 288.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+color = Color( 0.0703125, 0.0568542, 0.0568542, 0.209961 )
+_sections_unfolded = [ "Mouse", "Rect" ]
+
+[node name="Back" parent="." index="1" instance=ExtResource( 2 )]
+
+margin_left = -128.0
+margin_top = 64.0
+margin_right = 128.0
+margin_bottom = 128.0
+text = "Go to menu"
+
+[node name="Return" parent="." index="2" instance=ExtResource( 2 )]
+
+margin_left = -128.0
+margin_top = -64.0
+margin_right = 128.0
+margin_bottom = 0.0
+text = "Back to game"
+
+[connection signal="pressed" from="Back" to="." method="_on_Back_pressed"]
+
+[connection signal="pressed" from="Return" to="." method="_on_Return_pressed"]
+
+
