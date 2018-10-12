@@ -188,7 +188,6 @@ autostart = false
 
 [node name="Panel" type="Panel" parent="." index="6"]
 
-editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -225,14 +224,16 @@ size_flags_vertical = 1
 bbcode_enabled = true
 bbcode_text = "Move - r_click, actions - l_click, 
 change action_mode - TAB(or click in hud), 
-open build menu - R, create recipe - SPACE"
+open build menu - R, scroll recipes - A,D,
+create recipe - SPACE"
 visible_characters = -1
 percent_visible = 1.0
 meta_underlined = true
 tab_size = 4
 text = "Move - r_click, actions - l_click, 
 change action_mode - TAB(or click in hud), 
-open build menu - R, create recipe - SPACE"
+open build menu - R, scroll recipes - A,D,
+create recipe - SPACE"
 scroll_active = true
 scroll_following = false
 selection_enabled = false
